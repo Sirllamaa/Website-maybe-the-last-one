@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hidden Environmental Costs of EVs</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js Library -->
+</head>
+<body>
+    <div class="carousel">
+        <div class="carousel-track">
+            <div class="carousel-slide active" id="title-page">
+                <div class="text-card center-content">
+                    <h1>The Hidden Environmental Costs of Electric Vehicles</h1>
+                    <p>An argument examining the unseen impact of EVs compared to petrol cars.</p>
+                </div>
+            </div>
+
+            <div class="carousel-slide" id="battery-production">
+                <div class="text-card">
+                    <h2>Battery Production</h2>
+                    <p>Producing EV batteries involves extensive mining for rare-earth metals like lithium, cobalt, and nickel. This process depletes water resources, destroys ecosystems, and leaves behind toxic waste. Additionally, mining is energy-intensive, often relying on fossil fuels, which increases the carbon footprint of EV production. Battery recycling remains limited, further compounding these environmental issues.</p>
+                    <canvas id="batteryGraph"></canvas>
+                </div>
+            </div>
+
+            <div class="carousel-slide" id="electricity-generation">
+                <div class="text-card">
+                    <h2>Electricity Generation</h2>
+                    <p>While EVs produce no tailpipe emissions, their reliance on electricity links them to the energy grid. In many regions, electricity is still predominantly generated from coal and natural gas. This means that the \"green\" credentials of EVs depend heavily on the local energy mix. Transitioning to renewable energy is essential to reduce the overall emissions tied to EVs.</p>
+                    <canvas id="electricityGraph"></canvas>
+                </div>
+            </div>
+
+            <div class="carousel-slide" id="tire-pollution">
+                <div class="text-card">
+                    <h2>Tire and Brake Pollution</h2>
+                    <p>Due to their heavier weight, EVs wear down tires and brakes faster than conventional vehicles. This produces particulate matter that contributes to air pollution and can settle into soil and waterways, harming ecosystems. These microplastics are difficult to manage and are increasingly being recognized as a significant environmental concern.</p>
+                    <canvas id="pollutionGraph"></canvas>
+                </div>
+            </div>
+
+            <div class="carousel-slide" id="conclusion">
+                <div class="text-card">
+                    <h2>Conclusion</h2>
+                    <p>Electric vehicles represent a step forward in reducing direct emissions, but their lifecycle environmental costs reveal significant trade-offs. Investments in cleaner battery technology, recycling, and renewable energy are critical to making EVs a truly sustainable alternative. The transition to a greener future depends on addressing these challenges holistically.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-dots">
+            <button class="dot" data-slide="0"></button>
+            <button class="dot" data-slide="1"></button>
+            <button class="dot" data-slide="2"></button>
+            <button class="dot" data-slide="3"></button>
+            <button class="dot" data-slide="4"></button>
+        </div>
+
+        <div class="carousel-nav">
+            <button class="nav-button" id="prev-button">Previous</button>
+            <button class="nav-button" id="next-button">Next</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

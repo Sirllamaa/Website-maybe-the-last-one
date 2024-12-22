@@ -33,6 +33,8 @@ nav i {
 main {
   background: url(../../assets/img/bg.png) repeat;
   padding-left: 190px;
+  background-color: rgba(0, 0, 0, 0.15); /* Dark overlay */
+  background-blend-mode: multiply; /* Blends dark color with the image */
 }
 dl {
   margin-top: 0.5rem;
