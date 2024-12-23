@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     overflow: hidden;
     background: url(../../assets/img/bg.png) repeat;
-    background-color: rgba(0, 0, 0, 0.3); /* Lighter overlay */
+    background-color: rgba(0, 0, 0, 0.3);
     background-blend-mode: multiply;
     padding-left: 190px;
 }
@@ -25,21 +25,21 @@ body {
 
 .carousel-slide {
     position: absolute;
-    width: 70%; /* Frame size */
+    width: 70%;
     height: 70%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     opacity: 0;
-    background: rgba(255, 255, 255, 0.8); /* Softer frame */
-    border: 1px solid rgba(200, 200, 200, 0.5); /* Subtle border */
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(200, 200, 200, 0.5);
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Light shadow */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Top justified content */
+    justify-content: center;
     align-items: center;
     transition: transform 0.8s ease, opacity 0.8s ease;
 }
@@ -57,21 +57,11 @@ body {
 }
 
 #title-page {
-    justify-content: center; /* Center the title slide content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-
-canvas {
-    width: 600px; /* Fixed width for consistent graph size */
-    height: 400px; /* Fixed height maintaining aspect ratio */
-    margin: 20px auto; /* Center the graph */
-    display: block; /* Ensure proper layout */
-}
-
-.text-card {
-    width: 100%; /* Ensure content spans the full width */
-    text-align: left; /* Left-align text for better readability */
-    margin-top: 10px;
+    text-align: center;
 }
 
 .carousel-dots {
@@ -107,18 +97,19 @@ canvas {
 }
 
 .nav-button {
-    background: rgba(255, 255, 255, 0.8); /* Softer button background */
+    background: rgba(255, 255, 255, 0.8);
     color: #333;
-    border: 2px solid rgba(200, 200, 200, 0.6); /* Subtle border */
-    font-size: 1.5rem; /* Larger button size */
-    padding: 15px 30px; /* More padding for emphasis */
+    border: 2px solid rgba(200, 200, 200, 0.6);
+    font-size: 1.5rem;
+    padding: 15px 30px;
     cursor: pointer;
     border-radius: 8px;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .nav-button:hover {
-    background: rgba(255, 255, 255, 1); /* Slightly brighter on hover */
-    transform: scale(1.1); /* Enlarges slightly on hover */
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
 }
+
