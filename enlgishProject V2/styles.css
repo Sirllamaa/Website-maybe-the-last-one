@@ -1,20 +1,18 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     overflow: hidden;
-    background: url(../../assets/img/bg.png) repeat;
-    background-color: rgba(0, 0, 0, 0.3);
-    background-blend-mode: multiply;
-    padding-left: 190px;
 }
 
 .carousel {
-    height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    height: 90vh; /* Reduced carousel height */
 }
 
 .carousel-track {
@@ -25,52 +23,78 @@ body {
 
 .carousel-slide {
     position: absolute;
-    width: 70%;
-    height: 70%;
+    width: 90%;
+    max-width: 1000px;
+    padding: 15px; /* Reduced padding */
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.9) translate(-50%, -50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(200, 200, 200, 0.5);
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    height: auto;
+    max-height: 80%; /* Reduce maximum vertical size of the slides */
     box-sizing: border-box;
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.8s ease, opacity 0.8s ease;
+    justify-content: space-between;
+    padding-bottom: 40px; /* Ensure enough space for navigation buttons */
 }
 
 .carousel-slide.active {
-    transform: translate(-50%, -50%) scale(1);
     opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
     z-index: 1;
 }
 
-.carousel-slide.exiting {
-    transform: translate(-50%, -50%) scale(0.5);
-    opacity: 0;
-    z-index: 0;
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 35vh; /* Constrain image height to fit within reduced slides */
+    object-fit: contain; /* Maintain aspect ratio */
+    border-radius: 5px;
+    margin: 15px 0;
 }
 
-#title-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* Adjustments for the "Battery Production" slide */
+#battery-production h1 {
+    font-size: 1.8rem; /* Slightly smaller heading */
+}
+
+#battery-production h2 {
+    font-size: 1.1rem; /* Reduce text size */
+    line-height: 1.4; /* Adjust line height for readability */
+}
+
+#battery-production img {
+    max-height: 30vh; /* Further reduce image height for this slide */
+}
+
+#title-page, #conclusion {
+    padding: 15px;
+    height: auto; /* Shrinks dynamically based on content */
+}
+
+.text-card h1 {
+    font-size: 1.8rem; /* Reduced font size for headings */
+    margin-bottom: 10px;
+}
+
+.text-card h2 {
+    font-size: 1.1rem; /* Reduced font size for subheadings */
+    line-height: 1.4;
+    margin-bottom: 15px;
 }
 
 .carousel-dots {
-    position: fixed;
+    position: absolute;
     top: 50%;
-    right: 20px;
+    right: 20px; /* Dots are on the right */
     transform: translateY(-50%);
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Arrange dots vertically */
     gap: 10px;
 }
 
@@ -81,19 +105,21 @@ body {
     border-radius: 50%;
     cursor: pointer;
     border: none;
+    transition: background-color 0.3s ease;
 }
 
 .dot.active {
-    background: #333;
+    background: #333; /* Highlight active dot */
 }
 
 .carousel-nav {
-    position: fixed;
-    bottom: 20px;
+    position: absolute;
+    bottom: 5%; /* Navigation buttons at the bottom */
     display: flex;
     justify-content: center;
     width: 100%;
-    gap: 40px;
+    gap: 40px; /* Space between Previous and Next buttons */
+    transform: translateY(50%);
 }
 
 .nav-button {
@@ -101,7 +127,7 @@ body {
     color: #333;
     border: 2px solid rgba(200, 200, 200, 0.6);
     font-size: 1.5rem;
-    padding: 15px 30px;
+    padding: 10px 20px;
     cursor: pointer;
     border-radius: 8px;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
@@ -110,6 +136,21 @@ body {
 
 .nav-button:hover {
     background: rgba(255, 255, 255, 1);
-    transform: scale(1.1);
+    transform: scale(1.1); /* Slight zoom on hover */
 }
 
+/* Media Query for Large Screens */
+@media (min-width: 1200px) {
+    .carousel-slide {
+        width: 80%; /* Reduce card width for large screens */
+        max-height: 75%; /* Further reduce height for large displays */
+    }
+
+    .text-card h1 {
+        font-size: 1.6rem; /* Slightly smaller headings */
+    }
+
+    .text-card h2 {
+        font-size: 1rem; /* Smaller subheadings */
+    }
+}

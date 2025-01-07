@@ -1,3 +1,4 @@
+// Select elements
 const dots = document.querySelectorAll('.dot');
 const slides = document.querySelectorAll('.carousel-slide');
 const prevButton = document.getElementById('prev-button');
@@ -5,48 +6,32 @@ const nextButton = document.getElementById('next-button');
 
 let activeIndex = 0;
 
+// Function to update active slide
 function updateActiveSlide(index) {
     slides.forEach((slide, i) => {
-        slide.classList.remove('active', 'exiting');
-        if (i === index) {
-            slide.classList.add('active');
-        } else if (i === activeIndex) {
-            slide.classList.add('exiting');
-        }
+        slide.classList.toggle('active', i === index);
     });
-
     dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === index);
     });
-
     activeIndex = index;
 }
 
-function showSlide(index) {
-    if (index >= 0 && index < slides.length) {
-        updateActiveSlide(index);
-    }
+// Function to navigate slides
+function navigateSlides(direction) {
+    const nextIndex = (activeIndex + direction + slides.length) % slides.length;
+    updateActiveSlide(nextIndex);
 }
 
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        showSlide(index);
-    });
-});
+// Event listeners for buttons
+prevButton.addEventListener('click', () => navigateSlides(-1));
+nextButton.addEventListener('click', () => navigateSlides(1));
 
-prevButton.addEventListener('click', () => {
-    showSlide(activeIndex - 1);
-});
-
-nextButton.addEventListener('click', () => {
-    showSlide(activeIndex + 1);
-});
-
+// Event listener for arrow keys
 document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft') {
-        showSlide(activeIndex - 1);
+        navigateSlides(-1);
     } else if (event.key === 'ArrowRight') {
-        showSlide(activeIndex + 1);
+        navigateSlides(1);
     }
 });
-
