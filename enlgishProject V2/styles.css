@@ -1,8 +1,10 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     overflow: hidden;
+    background: url(../assets/img/bg.png) repeat;
+    background-color: rgba(0, 0, 0, 0.15); /* Dark overlay */
+    background-blend-mode: multiply; /* Blends dark color with the image */
 }
 
 .carousel {
