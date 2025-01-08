@@ -185,21 +185,4 @@ body {
     position: relative; /* Ensure it can be placed dynamically */
 }
 
-#grade-slide {
-    position: relative; /* Ensure proper positioning */
-    background: none; /* Remove background box */
-    box-shadow: none; /* Remove shadow */
-    border-radius: 0; /* Remove rounded corners */
-    padding: 0; /* Remove padding */
-    height: 100vh; /* Use full viewport height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
-#grade-slide .text-card {
-    background: none; /* Remove background of the text card */
-    box-shadow: none; /* Remove shadow from the text card */
-    padding: 0; /* Remove padding */
-}

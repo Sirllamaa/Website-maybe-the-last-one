@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Ensure the button stays within bounds
             const maxX = window.innerWidth - buttonWidth - 1000; // Maximum x-coordinate
-            const maxY = window.innerHeight - buttonHeight - 200; // Maximum y-coordinate
+            const maxY = window.innerHeight - buttonHeight - 500; // Maximum y-coordinate
             const randomX = Math.random() * maxX; // Constrained random x
             const randomY = Math.random() * maxY; // Constrained random y
             const randomSize = Math.random() * 30 + 10; // Random size between 10px and 30px
