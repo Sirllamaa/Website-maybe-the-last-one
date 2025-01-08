@@ -35,3 +35,37 @@ document.addEventListener('keydown', (event) => {
         navigateSlides(1);
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const failButton = document.getElementById('fail-button');
+    const passButton = document.getElementById('pass-button');
+
+    // Fail button hover effect
+    if (failButton) {
+        failButton.addEventListener('mouseover', () => {
+            const buttonWidth = failButton.offsetWidth;
+            const buttonHeight = failButton.offsetHeight;
+
+            // Ensure the button stays within bounds
+            const maxX = window.innerWidth - buttonWidth;
+            const maxY = window.innerHeight - buttonHeight;
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            const randomSize = Math.random() * 20 + 10; // Random size between 10px and 30px
+
+            failButton.style.position = 'absolute';
+            failButton.style.left = `${randomX}px`;
+            failButton.style.top = `${randomY}px`;
+            failButton.style.fontSize = `${randomSize}px`;
+        });
+    }
+
+    // Pass button click effect
+    if (passButton) {
+        passButton.addEventListener('click', () => {
+            alert('Thank you!');
+            alert('Bye Bye')
+            window.close();
+        });
+    }
+});

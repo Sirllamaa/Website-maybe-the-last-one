@@ -156,3 +156,27 @@ body {
         font-size: 1rem; /* Smaller subheadings */
     }
 }
+
+.grade-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#pass-button {
+    background-color: green;
+}
+
+#fail-button {
+    background-color: red;
+}
+
+.grade-button:hover {
+    transform: scale(1.1);
+}
+
