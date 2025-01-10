@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (passButton) {
         passButton.addEventListener('click', () => {
             alert('Thank you!');
-            alert('Bye Bye')
+            alert('Bye Bye');
             window.close();
         });
     }
